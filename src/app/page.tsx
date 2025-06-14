@@ -1,103 +1,674 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, Mic, Brain, BookOpen, Users, Calendar, Shield, Star, Play, Zap, Cpu, Network } from "lucide-react"
+import Image from "next/image"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+      {/* Navigation */}
+      <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">H</span>
+            </div>
+            <span className="text-xl font-bold text-gray-900">HizWayz</span>
+          </div>
+          <div className="hidden md:flex items-center space-x-6">
+            <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">
+              About
+            </a>
+            <a href="#products" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Products
+            </a>
+            <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Contact
+            </a>
+            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+              Get Started
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Enhanced Hero Section */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-purple-50/30 to-pink-50/30">
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+
+          {/* Floating Tech Elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse delay-500"></div>
+
+          {/* Tech Icons Floating */}
+          <div className="absolute top-32 right-1/4 text-purple-300/30 animate-bounce delay-300">
+            <Cpu className="w-8 h-8" />
+          </div>
+          <div className="absolute bottom-32 left-1/3 text-pink-300/30 animate-bounce delay-700">
+            <Network className="w-6 h-6" />
+          </div>
+          <div className="absolute top-1/2 right-10 text-blue-300/30 animate-bounce delay-1000">
+            <Zap className="w-7 h-7" />
+          </div>
+        </div>
+
+        <div className="container mx-auto text-center max-w-4xl relative z-10">
+          {/* Enhanced Badge with Tech Styling */}
+          <div className="mb-6 inline-flex items-center">
+            <Badge className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 text-purple-700 border border-purple-200/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 transition-all duration-300">
+              <Zap className="w-3 h-3 mr-1" />
+              Kingdom Entrepreneurs Hub
+            </Badge>
+          </div>
+
+          {/* Enhanced Title with Tech Styling */}
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Where Kingdom Ideas
+            <span className="relative">
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-pulse">
+                {" "}
+                Become Reality
+              </span>
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-blue-600/20 blur-2xl -z-10"></div>
+            </span>
+          </h1>
+
+          {/* Enhanced Description */}
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+            HizWayz is a <span className="font-semibold text-purple-700">cutting-edge consulting company</span> built as
+            a hub for Kingdom Entrepreneurs who want to find a place to help them make their ideas reality. We bridge
+            the gap between <span className="font-semibold text-pink-700">divine inspiration</span> and{" "}
+            <span className="font-semibold text-blue-700">practical innovation</span>.
+          </p>
+
+          {/* Tech-Enhanced Feature Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <div className="flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-purple-200/50 shadow-sm">
+              <Brain className="w-4 h-4 text-purple-600 mr-2" />
+              <span className="text-sm font-medium text-gray-700">AI-Powered Solutions</span>
+            </div>
+            <div className="flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-pink-200/50 shadow-sm">
+              <Network className="w-4 h-4 text-pink-600 mr-2" />
+              <span className="text-sm font-medium text-gray-700">Connected Community</span>
+            </div>
+            <div className="flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-blue-200/50 shadow-sm">
+              <Zap className="w-4 h-4 text-blue-600 mr-2" />
+              <span className="text-sm font-medium text-gray-700">Innovative Technology</span>
+            </div>
+          </div>
+
+          {/* Enhanced CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              <Zap className="mr-2 h-4 w-4" />
+              Explore Our Solutions
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-gray-300 bg-white/60 backdrop-blur-sm hover:bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              <Play className="mr-2 h-4 w-4" />
+              Watch Demo
+            </Button>
+          </div>
+
+          {/* Tech Stats/Metrics */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Brain className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">AI-Powered</div>
+              <div className="text-sm text-gray-600">Advanced Technology</div>
+            </div>
+            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Network className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">Connected</div>
+              <div className="text-sm text-gray-600">Global Community</div>
+            </div>
+            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">Innovative</div>
+              <div className="text-sm text-gray-600">Cutting-Edge Solutions</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="mb-4 bg-purple-100 text-purple-700">About HizWayz</Badge>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Empowering Kingdom Entrepreneurs</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                At HizWayz, we believe that divine inspiration deserves innovative execution. We're more than a
+                consulting company – we're a community of Kingdom Entrepreneurs dedicated to transforming God-given
+                ideas into reality.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Our mission is to bridge the gap between spiritual vision and practical application, providing the
+                tools, technology, and guidance needed to bring Kingdom purposes to life in the marketplace.
+              </p>
+              <div className="flex items-center space-x-4">
+                <div className="flex -space-x-2">
+                  <div className="w-10 h-10 bg-purple-500 rounded-full border-2 border-white"></div>
+                  <div className="w-10 h-10 bg-pink-500 rounded-full border-2 border-white"></div>
+                  <div className="w-10 h-10 bg-indigo-500 rounded-full border-2 border-white"></div>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Join our community</p>
+                  <p className="text-sm text-gray-600">of Kingdom Entrepreneurs</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <Image
+                src="/placeholder.svg?height=400&width=500"
+                alt="Kingdom Entrepreneurs Community"
+                width={500}
+                height={400}
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Product Section with Tabs */}
+      <section id="products" className="py-20 px-4 bg-gradient-to-r from-purple-50 to-pink-50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-purple-100 text-purple-700">Featured Product</Badge>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">My Prophetic Journal</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              The first AI-powered spiritual journaling app that helps you discover God's patterns in your spiritual
+              journey
+            </p>
+          </div>
+
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-8 bg-white/50 backdrop-blur-sm">
+              <TabsTrigger
+                value="overview"
+                className="data-[state=active]:bg-white data-[state=active]:text-purple-600"
+              >
+                Overview
+              </TabsTrigger>
+              <TabsTrigger
+                value="features"
+                className="data-[state=active]:bg-white data-[state=active]:text-purple-600"
+              >
+                Features
+              </TabsTrigger>
+              <TabsTrigger
+                value="experience"
+                className="data-[state=active]:bg-white data-[state=active]:text-purple-600"
+              >
+                Experience the App
+              </TabsTrigger>
+              <TabsTrigger value="pricing" className="data-[state=active]:bg-white data-[state=active]:text-purple-600">
+                Pricing
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Overview Tab */}
+            <TabsContent value="overview" className="space-y-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      "Discover God's Patterns in Your Spiritual Journey"
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                      Transform your spiritual experiences into profound insights with advanced AI technology. Record
+                      visions, dreams, and prophetic words, then let AI help you recognize divine patterns and growth
+                      opportunities.
+                    </p>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Mic className="h-4 w-4 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Voice & Text Recording</h4>
+                        <p className="text-sm text-gray-600">Capture spiritual experiences instantly</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Brain className="h-4 w-4 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">AI Pattern Recognition</h4>
+                        <p className="text-sm text-gray-600">Identify divine patterns and themes</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <BookOpen className="h-4 w-4 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Biblical Integration</h4>
+                        <p className="text-sm text-gray-600">AI suggests relevant scriptures</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Users className="h-4 w-4 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Team Collaboration</h4>
+                        <p className="text-sm text-gray-600">Share insights with mentors</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button className="bg-black hover:bg-gray-800 text-white">
+                      <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                      </svg>
+                      Download for iOS
+                    </Button>
+                    <Button className="bg-green-600 hover:bg-green-700 text-white">
+                      <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                      </svg>
+                      Get it on Google Play
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="relative">
+                  {/* Single featured image - Dashboard */}
+                  <div className="relative z-10">
+                    <Image
+                      src="/images/app-dashboard.png"
+                      alt="My Prophetic Journal Dashboard"
+                      width={300}
+                      height={600}
+                      className="mx-auto rounded-3xl shadow-2xl"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-200 to-pink-200 rounded-3xl blur-3xl opacity-30 transform scale-105"></div>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Features Tab */}
+            <TabsContent value="features" className="space-y-8">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Powerful Features</h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Cutting-edge AI meets ancient wisdom to transform your spiritual journey
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                      <Mic className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Voice & Text Recording</CardTitle>
+                    <CardDescription>
+                      Capture spiritual experiences instantly with voice or text. AI transcription powered by OpenAI
+                      Whisper technology.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                      <Brain className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>AI Pattern Recognition</CardTitle>
+                    <CardDescription>
+                      Advanced spiritual insight analysis using OpenAI technology. Identify recurring themes and divine
+                      patterns.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                      <BookOpen className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Biblical Integration</CardTitle>
+                    <CardDescription>
+                      Seamlessly add scriptural references. AI suggests relevant biblical passages based on your
+                      experiences.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                      <Users className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Team Collaboration</CardTitle>
+                    <CardDescription>
+                      Share insights with spiritual mentors, prayer partners, or ministry teams. Collaborative
+                      commenting features.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                      <Calendar className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Spiritual Timeline</CardTitle>
+                    <CardDescription>
+                      Beautiful calendar view of your spiritual journey. Track growth patterns over time and visualize
+                      seasons.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                      <Shield className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Privacy & Security</CardTitle>
+                    <CardDescription>
+                      End-to-end encryption for sensitive spiritual content. GDPR compliant with enterprise-grade
+                      Firebase infrastructure.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+            </TabsContent>
+
+            {/* Experience the App Tab */}
+            <TabsContent value="experience" className="space-y-8">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Experience the App</h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  See how My Prophetic Journal transforms your spiritual journey with intuitive design and powerful
+                  features
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 items-end">
+                {/* Splash Screen */}
+                <div className="text-center">
+                  <Image
+                    src="/images/app-splash.jpeg"
+                    alt="My Prophetic Journal App Launch"
+                    width={200}
+                    height={400}
+                    className="mx-auto rounded-2xl shadow-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-gray-900 mb-2">Beautiful Launch</h4>
+                  <p className="text-sm text-gray-600">Inspiring design from the moment you open the app</p>
+                </div>
+
+                {/* Dashboard */}
+                <div className="text-center">
+                  <Image
+                    src="/images/app-dashboard.png"
+                    alt="Dashboard Overview"
+                    width={200}
+                    height={400}
+                    className="mx-auto rounded-2xl shadow-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-gray-900 mb-2">Personal Dashboard</h4>
+                  <p className="text-sm text-gray-600">Track your spiritual journey with detailed stats</p>
+                </div>
+
+                {/* Calendar with Notes */}
+                <div className="text-center">
+                  <Image
+                    src="/images/app-calendar-with-notes.png"
+                    alt="Calendar with Spiritual Notes"
+                    width={200}
+                    height={400}
+                    className="mx-auto rounded-2xl shadow-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-gray-900 mb-2">Spiritual Calendar</h4>
+                  <p className="text-sm text-gray-600">Organize visions, dreams, and prophetic words by date</p>
+                </div>
+
+                {/* AI Insights */}
+                <div className="text-center">
+                  <Image
+                    src="/images/app-insights.png"
+                    alt="AI-Powered Pattern Discovery"
+                    width={200}
+                    height={400}
+                    className="mx-auto rounded-2xl shadow-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-gray-900 mb-2">AI Pattern Discovery</h4>
+                  <p className="text-sm text-gray-600">Discover divine patterns with biblical wisdom</p>
+                </div>
+
+                {/* Empty Calendar */}
+                <div className="text-center">
+                  <Image
+                    src="/images/app-calendar.png"
+                    alt="Clean Calendar Interface"
+                    width={200}
+                    height={400}
+                    className="mx-auto rounded-2xl shadow-lg mb-4"
+                  />
+                  <h4 className="font-semibold text-gray-900 mb-2">Clean Interface</h4>
+                  <p className="text-sm text-gray-600">Intuitive design that focuses on your spiritual growth</p>
+                </div>
+              </div>
+
+              <div className="text-center mt-12">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" className="bg-black hover:bg-gray-800 text-white">
+                    <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                    </svg>
+                    Download for iOS
+                  </Button>
+                  <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
+                    <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                    </svg>
+                    Get it on Google Play
+                  </Button>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Pricing Tab */}
+            <TabsContent value="pricing" className="space-y-8">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">Affordable Spiritual Growth</h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Less than a coffee per week for unlimited AI analysis and spiritual insights
+                </p>
+              </div>
+
+              <div className="max-w-4xl mx-auto">
+                <Card className="max-w-md mx-auto border-0 shadow-2xl">
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Star className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-2xl">My Prophetic Journal</CardTitle>
+                    <CardDescription>Complete spiritual journaling solution</CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <div className="mb-6">
+                      <span className="text-4xl font-bold text-gray-900">$9.99</span>
+                      <span className="text-gray-600">/month</span>
+                    </div>
+                    <ul className="text-left space-y-3 mb-8">
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                        Unlimited AI analysis
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                        Voice transcription
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                        Team collaboration
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                        Biblical insights
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                        Secure cloud storage
+                      </li>
+                    </ul>
+                    <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 mb-4">
+                      Start Free Trial
+                    </Button>
+                    <p className="text-sm text-gray-500">✨ Free trial available</p>
+                  </CardContent>
+                </Card>
+
+                {/* Additional pricing benefits */}
+                <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
+                  <div className="p-6">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Shield className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 mb-2">30-Day Money Back</h4>
+                    <p className="text-sm text-gray-600">Not satisfied? Get a full refund within 30 days</p>
+                  </div>
+                  <div className="p-6">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Community Support</h4>
+                    <p className="text-sm text-gray-600">Join our community of Kingdom Entrepreneurs</p>
+                  </div>
+                  <div className="p-6">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Calendar className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Regular Updates</h4>
+                    <p className="text-sm text-gray-600">Continuous improvements and new features</p>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-pink-600">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">Ready to Transform Your Ideas Into Reality?</h2>
+          <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+            Join the HizWayz community and discover how Kingdom Entrepreneurs are using innovative solutions to fulfill
+            their divine calling.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+              Get Started Today
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-purple-600"
+            >
+              Schedule Consultation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="py-12 px-4 bg-gray-900">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">H</span>
+                </div>
+                <span className="text-xl font-bold text-white">HizWayz</span>
+              </div>
+              <p className="text-gray-400">
+                Empowering Kingdom Entrepreneurs to transform divine inspiration into innovative reality.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Products</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    My Prophetic Journal
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Coming Soon
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Privacy
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Connect</h4>
+              <p className="text-gray-400 mb-4">Join our community of Kingdom Entrepreneurs</p>
+              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                Get In Touch
+              </Button>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 HizWayz. All rights reserved. Built by Prophetic Horizon Apps.</p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
