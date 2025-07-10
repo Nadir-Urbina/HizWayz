@@ -85,7 +85,7 @@ export default function LandingPage() {
         <div className="container mx-auto text-center max-w-4xl relative z-10">
           {/* Enhanced Badge with Tech Styling */}
           <div className="mb-6 inline-flex items-center">
-            <Badge className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 text-purple-700 border border-purple-200/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 transition-all duration-300">
+            <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border border-purple-200/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-700 transition-all duration-300">
               <Zap className="w-3 h-3 mr-1" />
               Kingdom Entrepreneurs Hub
             </Badge>
@@ -115,24 +115,10 @@ export default function LandingPage() {
             <em>Kingdom Entrepreneurs are faith-driven business leaders and innovators who seek to integrate their spiritual calling with entrepreneurial ventures.</em>
           </p>
 
-          {/* Tech-Enhanced Feature Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <div className="flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-purple-200/50 shadow-sm">
-              <Brain className="w-4 h-4 text-purple-600 mr-2" />
-              <span className="text-sm font-medium text-gray-700">AI-Powered Solutions</span>
-            </div>
-            <div className="flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-pink-200/50 shadow-sm">
-              <Network className="w-4 h-4 text-pink-600 mr-2" />
-              <span className="text-sm font-medium text-gray-700">Connected Community</span>
-            </div>
-            <div className="flex items-center px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-blue-200/50 shadow-sm">
-              <Zap className="w-4 h-4 text-blue-600 mr-2" />
-              <span className="text-sm font-medium text-gray-700">Innovative Technology</span>
-            </div>
-          </div>
+
 
           {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button
               size="lg"
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
@@ -142,14 +128,6 @@ export default function LandingPage() {
               Contact Us Today
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-gray-300 bg-white/60 backdrop-blur-sm hover:bg-white/80 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              <Play className="mr-2 h-4 w-4" />
-              Watch Demo
-            </Button>
           </div>
 
           {/* Tech Stats/Metrics */}
@@ -158,7 +136,7 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Brain className="w-6 h-6 text-white" />
               </div>
-              <div className="text-2xl font-bold text-gray-900 mb-1">AI-Powered</div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">Top Tech</div>
               <div className="text-sm text-gray-600">Advanced Technology</div>
             </div>
             <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-lg">
